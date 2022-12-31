@@ -5,6 +5,10 @@ services:
     depends_on:
       - db
     build: ./flask/
+    #* Fazendo uso de Bind Mount, onde persistimos nas alterações
+    #* sem necessitar ficar dando o comando do compose up
+    volumes:
+      - "/mnt/c/Users/rodri/dev/api-py-mysql-docker/flask:/app"
     ports:
       - 5000:5000
     networks:
